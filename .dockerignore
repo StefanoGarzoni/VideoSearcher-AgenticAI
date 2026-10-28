@@ -1,0 +1,30 @@
+# Docker build context excludes (build context is the repo root — see
+# docker-compose.agents.yml `context: .`). The Dockerfile does `COPY agents-container/ /app`,
+# which would otherwise bake agents-container/.env (API keys / git identity) into the
+# image layer. .env is supplied at RUNTIME via env_file, never needed at build time.
+
+# Secrets / runtime config
+**/.env
+**/.env.local
+
+# VCS + Python caches
+.git
+**/__pycache__
+**/*.py[cod]
+*.egg-info
+
+# Large / gitignored trees not needed by the image build
+llama.cpp
+dMALIBOO
+Repetti_VLM-Testing
+.venv-tuning
+.venv
+venv
+local-ai-service/models
+data/runs
+tests/results
+wandb
+
+# Logs / scratch
+*.log
+logs/

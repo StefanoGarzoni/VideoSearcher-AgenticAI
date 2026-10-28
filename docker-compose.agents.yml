@@ -1,0 +1,67 @@
+services:
+  agents-orchestrator:
+    build:
+      context: .
+      dockerfile: agents-container/Dockerfile
+    container_name: agents-orchestrator
+    runtime: nvidia
+    env_file:
+      - ./agents-container/.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      FFMPEG_0_MCP_SERVER_URL: http://ffmpeg-0-mcp-server:8000/mcp
+      FFMPEG_1_MCP_SERVER_URL: http://ffmpeg-1-mcp-server:8002/mcp
+      FFMPEG_2_MCP_SERVER_URL: http://ffmpeg-2-mcp-server:8003/mcp
+      LIBROSA_MCP_SERVER_URL: http://librosa-mcp-server:8001/mcp
+      SPEECH_TO_TEXT_MCP_SERVER_URL: http://speech-to-text-mcp-server:8004/mcp
+      GREP_MCP_SERVER_URL: http://grep-mcp-server:8005/mcp
+      FRAMES_MCP_SERVER_URL: http://ffmpeg-frames-mcp-server:8006/mcp
+
+      # Backward compatibility: old segmentation env var.
+      SEGMENTATION_MCP_SERVER_URL: http://vlm-segmentation-mcp-server:8008/mcp
+
+      # New explicit segmentation MCP servers.
+      IMAGE_SEGMENTATION_MCP_SERVER_URL: http://vlm-segmentation-mcp-server:8008/mcp
+      VIDEO_SEGMENTATION_MCP_SERVER_URL: http://video-segmentation-mcp-server:8009/mcp
+
+      # Extension tool MCP servers
+      WEB_SEARCH_MCP_SERVER_URL: http://web-search-mcp-server:8010/mcp
+      SUMMARIZE_MCP_SERVER_URL: http://summarize-mcp-server:8016/mcp
+      SCENE_DETECT_MCP_SERVER_URL: http://scene-detect-mcp-server:8025/mcp
+
+      # Model selection — overridable from run_agentic_system.sh (exported env).
+      # Falls back to these defaults when started directly with docker compose.
+      LLM_MODEL: ${LLM_MODEL:-gemma-4-E2B-it-Q8_0.gguf}
+      LLM_ORCHESTRATOR_MODEL: ${LLM_ORCHESTRATOR_MODEL:-gemma-4-E2B-it-Q8_0.gguf}
+      VQA_MODEL_NAME: ${VQA_MODEL_NAME:-microsoft/Phi-4-reasoning-vision-15B}
+      HF_HOME: /app/hf_cache
+      EMISSIONS_DIR: /app/emissions
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./orchestrator_test:/app/orchestrator_test
+      - ./tests:/app/tests
+      - ./logs/emissions:/app/emissions
+      - vqa_hf_cache:/app/hf_cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
+    networks:
+      - videosearcher
+
+networks:
+  videosearcher:
+    external: true
+    name: videosearcher_agenticai_videosearcher
+
+volumes:
+  vqa_hf_cache:

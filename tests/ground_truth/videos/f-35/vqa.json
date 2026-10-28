@@ -1,0 +1,347 @@
+{
+  "video": "f-35",
+  "items": [
+    {
+      "frame_path": "videos/f-35/frames/t005s.jpg",
+      "timestamp": 5,
+      "question": "What color and type of clothing is the person wearing?",
+      "q_type": "attribute",
+      "reference_answer": "An olive-green or dark-green military flight suit with rank insignia and unit patches on the chest and sleeve.",
+      "required_facts": [
+        "green",
+        "flight suit"
+      ],
+      "acceptable_keywords": [
+        "green",
+        "olive",
+        "flight suit",
+        "g-suit",
+        "coverall",
+        "uniform",
+        "military"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 5
+    },
+    {
+      "frame_path": "videos/f-35/frames/t005s.jpg",
+      "timestamp": 5,
+      "question": "What object is the person holding in their hands?",
+      "q_type": "identify",
+      "reference_answer": "A dark pilot flight helmet with a visor.",
+      "required_facts": [
+        "helmet"
+      ],
+      "acceptable_keywords": [
+        "helmet",
+        "flight helmet",
+        "pilot helmet",
+        "headgear"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/f-35/frames/t005s.jpg",
+      "timestamp": 5,
+      "question": "Is there a military aircraft or jet visible anywhere in this image?",
+      "q_type": "true_negative",
+      "reference_answer": "No. There is no aircraft visible. The image shows only a person (a pilot) holding a helmet, against a hangar wall and blue sky.",
+      "required_facts": [
+        "no"
+      ],
+      "acceptable_keywords": [
+        "no",
+        "not visible",
+        "not present",
+        "cannot see",
+        "none",
+        "absent"
+      ],
+      "is_true_negative": true,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/f-35/frames/t015s.jpg",
+      "timestamp": 15,
+      "question": "What type of military aircraft is visible in this image?",
+      "q_type": "identify",
+      "reference_answer": "An F-35 Lightning II stealth fighter jet in flight, viewed from a nearby aircraft. A second aircraft's wing with a cyan/blue triangular marking is visible in the foreground.",
+      "required_facts": [
+        "F-35",
+        "jet"
+      ],
+      "acceptable_keywords": [
+        "F-35",
+        "fighter jet",
+        "stealth fighter",
+        "aircraft",
+        "jet",
+        "fighter",
+        "military aircraft"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 5
+    },
+    {
+      "frame_path": "videos/f-35/frames/t015s.jpg",
+      "timestamp": 15,
+      "question": "What color is the fuselage of the aircraft in flight?",
+      "q_type": "attribute",
+      "reference_answer": "Gray or dark gray (medium-to-dark matte gray, consistent with stealth paint).",
+      "required_facts": [
+        "gray"
+      ],
+      "acceptable_keywords": [
+        "gray",
+        "grey",
+        "dark gray",
+        "dark grey",
+        "matte gray",
+        "silver-gray"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/f-35/frames/t045s.jpg",
+      "timestamp": 45,
+      "question": "How many people are visible in this image?",
+      "q_type": "count",
+      "reference_answer": "One person (a pilot in a green flight suit, gesturing or pointing inside a hangar).",
+      "required_facts": [
+        "1",
+        "one"
+      ],
+      "acceptable_keywords": [
+        "one",
+        "1",
+        "single",
+        "a person",
+        "one person"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 1
+    },
+    {
+      "frame_path": "videos/f-35/frames/t045s.jpg",
+      "timestamp": 45,
+      "question": "Is there a military aircraft visible in this image?",
+      "q_type": "true_negative",
+      "reference_answer": "No. The image shows a pilot standing inside an empty aircraft hangar. No aircraft is visible.",
+      "required_facts": [
+        "no"
+      ],
+      "acceptable_keywords": [
+        "no",
+        "not visible",
+        "not present",
+        "cannot see",
+        "none",
+        "empty",
+        "no aircraft"
+      ],
+      "is_true_negative": true,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/f-35/frames/t055s.jpg",
+      "timestamp": 55,
+      "question": "Is the fighter jet visible in this image airborne or on the ground?",
+      "q_type": "attribute",
+      "reference_answer": "On the ground. The F-35 is parked inside or at the entrance of an aircraft hangar.",
+      "required_facts": [
+        "ground"
+      ],
+      "acceptable_keywords": [
+        "ground",
+        "on the ground",
+        "tarmac",
+        "hangar",
+        "parked",
+        "stationary",
+        "not flying",
+        "not airborne"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/f-35/frames/t055s.jpg",
+      "timestamp": 55,
+      "question": "How many people are visible in this image?",
+      "q_type": "count",
+      "reference_answer": "One person (a pilot in full flight gear standing on the tarmac in front of the hangar).",
+      "required_facts": [
+        "1",
+        "one"
+      ],
+      "acceptable_keywords": [
+        "one",
+        "1",
+        "single",
+        "a person"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 1
+    },
+    {
+      "frame_path": "videos/f-35/frames/t065s.jpg",
+      "timestamp": 65,
+      "question": "How many aircraft are visible in this image?",
+      "q_type": "count",
+      "reference_answer": "Four aircraft are visible flying in formation: two dark F-35s in the upper portion, and two other fighter jets (non-F-35, possibly F-15 Eagle or F-14) in the lower portion \u2014 one in the middle and one at the bottom.",
+      "required_facts": [
+        "4",
+        "four"
+      ],
+      "acceptable_keywords": [
+        "four",
+        "4"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 1
+    },
+    {
+      "frame_path": "videos/f-35/frames/t065s.jpg",
+      "timestamp": 65,
+      "question": "Describe the relative positions of the aircraft in this formation.",
+      "q_type": "spatial",
+      "reference_answer": "Two darker F-35 jets fly in the upper portion side by side, one jet flies in the middle, and a fourth jet flies below, forming a roughly vertical stagger or loose diamond formation.",
+      "required_facts": [
+        "formation"
+      ],
+      "acceptable_keywords": [
+        "formation",
+        "diamond",
+        "staggered",
+        "upper",
+        "lower",
+        "above",
+        "below",
+        "group"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 8
+    },
+    {
+      "frame_path": "videos/f-35/frames/t075s.jpg",
+      "timestamp": 75,
+      "question": "Is a pilot visible in the cockpit of this aircraft?",
+      "q_type": "identify",
+      "reference_answer": "Yes. A pilot wearing a helmet is visible inside the cockpit/canopy of the F-35.",
+      "required_facts": [
+        "yes",
+        "pilot"
+      ],
+      "acceptable_keywords": [
+        "yes",
+        "pilot",
+        "person",
+        "cockpit",
+        "canopy",
+        "helmet"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "How many animals are visible in this image?",
+      "q_type": "count",
+      "reference_answer": "Two animals: one lion and one gorilla.",
+      "required_facts": [
+        "2",
+        "two"
+      ],
+      "acceptable_keywords": [
+        "two",
+        "2",
+        "a lion",
+        "a gorilla"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 1
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "What two animals are present in this image?",
+      "q_type": "identify",
+      "reference_answer": "A lion (male, with a dark mane) and a silverback gorilla, facing each other in what appears to be a zoo enclosure.",
+      "required_facts": [
+        "lion",
+        "gorilla"
+      ],
+      "acceptable_keywords": [
+        "lion",
+        "gorilla",
+        "ape",
+        "primate",
+        "big cat"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 5
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t010s.jpg",
+      "timestamp": 10,
+      "question": "What color is the lion's mane?",
+      "q_type": "attribute",
+      "reference_answer": "Dark brown to golden-brown. The mane is full and dark, slightly darker around the edges.",
+      "required_facts": [
+        "brown"
+      ],
+      "acceptable_keywords": [
+        "brown",
+        "dark brown",
+        "golden",
+        "golden-brown",
+        "tawny",
+        "dark"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "Which animal appears taller or larger in the frame \u2014 the lion or the gorilla?",
+      "q_type": "spatial",
+      "reference_answer": "The gorilla appears taller/larger than the lion, standing upright on two legs.",
+      "required_facts": [
+        "gorilla"
+      ],
+      "acceptable_keywords": [
+        "gorilla",
+        "larger",
+        "bigger",
+        "taller",
+        "standing"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "Is there a tiger visible in this image?",
+      "q_type": "true_negative",
+      "reference_answer": "No. There is no tiger. The image shows a lion and a gorilla in a zoo enclosure.",
+      "required_facts": [
+        "no"
+      ],
+      "acceptable_keywords": [
+        "no",
+        "not visible",
+        "not present",
+        "cannot see",
+        "none",
+        "no tiger"
+      ],
+      "is_true_negative": true,
+      "min_answer_length": 3
+    }
+  ]
+}

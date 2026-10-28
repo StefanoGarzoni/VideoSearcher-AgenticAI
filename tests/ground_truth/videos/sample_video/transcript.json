@@ -1,0 +1,76 @@
+{
+  "video": "sample_video",
+  "language": "en",
+  "source": "whisper-large-v3",
+  "reference_model": "large-v3",
+  "tested_model": "small",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.2,
+      "text": "last week, and we talked about variable elimination last week."
+    },
+    {
+      "start": 8.94,
+      "end": 11.4,
+      "text": "And just a comment before we start."
+    },
+    {
+      "start": 12.18,
+      "end": 14.8,
+      "text": "This Wednesday, there is no lecture."
+    },
+    {
+      "start": 15.74,
+      "end": 19.62,
+      "text": "If you check on the detailed schedule, it should be already like that."
+    },
+    {
+      "start": 19.78,
+      "end": 21.54,
+      "text": "Please take note."
+    },
+    {
+      "start": 21.98,
+      "end": 28.06,
+      "text": "On Wednesday, no lecture, because I will be traveling abroad, so it's not possible."
+    },
+    {
+      "start": 28.06,
+      "end": 29.46,
+      "text": "It should be already like that."
+    },
+    {
+      "start": 30.0,
+      "end": 34.36,
+      "text": "But in case I wanted to remind you."
+    },
+    {
+      "start": 34.68,
+      "end": 34.84,
+      "text": "Okay."
+    },
+    {
+      "start": 35.28,
+      "end": 41.76,
+      "text": "So let's go back to last lecture, where we talked about variable elimination."
+    },
+    {
+      "start": 43.44,
+      "end": 53.24,
+      "text": "We have seen that variable elimination is an efficient technique to perform any kind"
+    },
+    {
+      "start": 53.24,
+      "end": 57.78,
+      "text": "of inference on any kind of Bayesian network."
+    },
+    {
+      "start": 57.78,
+      "end": 60.02,
+      "text": "It requires"
+    }
+  ],
+  "full_text": "last week, and we talked about variable elimination last week. And just a comment before we start. This Wednesday, there is no lecture. If you check on the detailed schedule, it should be already like that. Please take note. On Wednesday, no lecture, because I will be traveling abroad, so it's not possible. It should be already like that. But in case I wanted to remind you. Okay. So let's go back to last lecture, where we talked about variable elimination. We have seen that variable elimination is an efficient technique to perform any kind of inference on any kind of Bayesian network. It requires",
+  "is_silver": true
+}

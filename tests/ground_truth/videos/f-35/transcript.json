@@ -1,0 +1,81 @@
+{
+  "video": "f-35",
+  "language": "en",
+  "source": "whisper-large-v3",
+  "reference_model": "large-v3",
+  "tested_model": "small",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.62,
+      "text": "I'm a pilot of the Italian military aeronautics and this is my car, the F35A."
+    },
+    {
+      "start": 15.62,
+      "end": 22.2,
+      "text": "The F35 is a fifth generation omnirole fighter, it's about 15 meters long, 12 meters wide,"
+    },
+    {
+      "start": 22.2,
+      "end": 29.7,
+      "text": "it reaches a speed of about 6 mc, once and a half the speed of sound,"
+    },
+    {
+      "start": 29.7,
+      "end": 34.58,
+      "text": "and it has a height of about 50,000 feet and the sky above starts to get really dark."
+    },
+    {
+      "start": 38.58,
+      "end": 41.58,
+      "text": "And the main feature? Its low observability."
+    },
+    {
+      "start": 44.58,
+      "end": 48.58,
+      "text": "Ok, maybe we exaggerated a bit, but it's invisible to the radar."
+    },
+    {
+      "start": 49.58,
+      "end": 51.58,
+      "text": "When I fly, this is my equipment."
+    },
+    {
+      "start": 52.2,
+      "end": 58.2,
+      "text": "G-suit, flying suit, helmet, and finally, gloves."
+    },
+    {
+      "start": 61.2,
+      "end": 64.2,
+      "text": "Now I'll tell you why I love flying with the F35."
+    },
+    {
+      "start": 64.2,
+      "end": 71.2,
+      "text": "The F35 is the most technologically advanced aircraft available to NATO and our Air Force."
+    },
+    {
+      "start": 71.2,
+      "end": 76.2,
+      "text": "It allows me to do unthinkable missions with extreme ease."
+    },
+    {
+      "start": 76.2,
+      "end": 81.2,
+      "text": "And then, let me tell you, it's really cool."
+    },
+    {
+      "start": 83.2,
+      "end": 86.2,
+      "text": "In\uadf8"
+    },
+    {
+      "start": 87.2,
+      "end": 88.4,
+      "text": "The F35 makes influence on Voyager's"
+    }
+  ],
+  "full_text": "I'm a pilot of the Italian military aeronautics and this is my car, the F35A. The F35 is a fifth generation omnirole fighter, it's about 15 meters long, 12 meters wide, it reaches a speed of about 6 mc, once and a half the speed of sound, and it has a height of about 50,000 feet and the sky above starts to get really dark. And the main feature? Its low observability. Ok, maybe we exaggerated a bit, but it's invisible to the radar. When I fly, this is my equipment. G-suit, flying suit, helmet, and finally, gloves. Now I'll tell you why I love flying with the F35. The F35 is the most technologically advanced aircraft available to NATO and our Air Force. It allows me to do unthinkable missions with extreme ease. And then, let me tell you, it's really cool. In\uadf8 The F35 makes influence on Voyager's",
+  "is_silver": true
+}

@@ -1,0 +1,70 @@
+# Python/test environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+.venv-*/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Local environments / credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Models, service outputs, and generated data
+local-ai-service/models/
+llama.cpp/
+logs/
+data/runs/
+results/
+*.gguf
+*.safetensors
+*.pt
+*.onnx
+*.bin
+*.log
+wandb/
+dMALIBOO/
+.ai-sprint*/
+ai-sprint-studio/
+ai-sprint-design/
+
+# Archive intentionally excludes raw per-trial dumps; keep curated research artifacts
+/tests/results/*
+!/tests/results/all_metrics.csv
+!/tests/results/tuning/
+!/tests/results/markdowns/
+!/tests/results/charts_merged_pareto.png
+!/tests/results/charts_merged_heatmap.png
+!/tests/results/pareto_accuracy_energy_annotated.png
+
+# Private third-party code: never vendor in this repo
+/VLMs-Testing-Framework/
+/Repetti_VLM-Testing/
+
+# External local checkpoints and fixture videos
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+
+# Historic prototype binaries
+legacy/videosearcher/src/deepspeech/
+legacy/videosearcher/src/object-detector/

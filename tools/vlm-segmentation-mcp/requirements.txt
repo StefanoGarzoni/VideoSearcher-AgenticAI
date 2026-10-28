@@ -1,0 +1,17 @@
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+mcp>=1.2.0
+Pillow>=11.0.0
+numpy>=1.24.0,<2.0.0
+torch>=2.4.0
+torchvision>=0.19.0
+transformers==4.57.6
+accelerate>=1.0.0
+huggingface-hub>=0.20.0
+safetensors>=0.4.0
+sentencepiece>=0.1.99
+groundingdino-py
+sam2
+httpx
+opencv-python-headless
+codecarbon>=2.3.0

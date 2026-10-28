@@ -1,0 +1,11 @@
+# Host-side deps for the model-comparison scripts.
+#   run_model_comparison.py  → stdlib only (uses docker + llama-server)
+#   consolidate_metrics.py   → stdlib only
+#   visualise_results.py --table → stdlib only
+#   visualise_results.py --charts / --merge → needs the plotting stack below
+#
+# Install:  pip install -r scripts/requirements.txt --break-system-packages
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.13
+plotly>=5.18

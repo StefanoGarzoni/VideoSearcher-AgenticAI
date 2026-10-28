@@ -1,0 +1,437 @@
+services:
+  # FFmpeg MCP Server with StreamableHTTP
+  ffmpeg-0-mcp-server:
+    build:
+      context: ./tools/ffmpeg-0-mcp
+      dockerfile: Dockerfile
+    container_name: ffmpeg-0-mcp-server
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/audio_extraction
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+    volumes:
+      - ./tools/ffmpeg-0-mcp:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  librosa-mcp-server:
+    build:
+      context: ./tools/Librosa
+      dockerfile: Dockerfile
+    container_name: librosa-mcp-server
+    ports:
+      - "8001:8001"
+    environment:
+      PORT: 8001
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/audio_analysis
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+    volumes:
+      - ./tools/Librosa:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8001", "--log-level", "debug", "--access-log"]
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  ffmpeg-1-mcp-server:
+    build:
+      context: ./tools/ffmpeg-1-mcp
+      dockerfile: Dockerfile
+    container_name: ffmpeg-1-mcp-server
+    ports:
+      - "8002:8002"
+    environment:
+      PORT: 8002
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/video_clips
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+    volumes:
+      - ./tools/ffmpeg-1-mcp:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8002/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  ffmpeg-2-mcp-server:
+    build:
+      context: ./tools/ffmpeg-2-mcp
+      dockerfile: Dockerfile
+    container_name: ffmpeg-2-mcp-server
+    ports:
+      - "8003:8003"
+    environment:
+      PORT: 8003
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/compression
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+    volumes:
+      - ./tools/ffmpeg-2-mcp:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8003/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  speech-to-text-mcp-server:
+    build:
+      context: ./tools/Transcribe
+      dockerfile: Dockerfile
+    container_name: speech-to-text-mcp-server
+    ports:
+      - "8004:8004"
+    environment:
+      PORT: 8004
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/transcription
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+      HF_HOME: /app/.cache/huggingface
+    volumes:
+      - ./tools/Transcribe:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ~/.cache/huggingface:/app/.cache/huggingface
+      - ./logs/emissions:/app/emissions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8004/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  grep-mcp-server:
+    build:
+      context: ./tools/Grep
+      dockerfile: Dockerfile
+    container_name: grep-mcp-server
+    ports:
+      - "8005:8005"
+    environment:
+      PORT: 8005
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/search_results
+      ENABLE_SESSION_MANAGEMENT: "true"
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: DEBUG
+      UVICORN_LEVEL: debug
+      UVICORN_ACCESS_LOG: "true"
+    volumes:
+      - ./tools/Grep:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8005/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  ffmpeg-frames-mcp-server:
+    build:
+      context: ./tools/ffmpeg-frames-mcp
+      dockerfile: Dockerfile
+    container_name: ffmpeg-frames-mcp-server
+    ports:
+      - "8006:8006"
+    environment:
+      PORT: 8006
+      HOST: 0.0.0.0
+      DATA_DIR: /data/runs
+      LOG_LEVEL: INFO
+    volumes:
+      - ./tools/ffmpeg-frames-mcp:/app
+      - ./logs/emissions:/app/emissions
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8006/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+
+  # Image/frame segmentation MCP server.
+  # This is the GPU server that runs GroundingDINO + SAM2.
+  vlm-segmentation-mcp-server:
+    build:
+      context: .
+      dockerfile: tools/vlm-segmentation-mcp/Dockerfile
+    container_name: vlm-segmentation-mcp-server
+    runtime: nvidia
+    ports:
+      - "8008:8008"
+    environment:
+      PORT: 8008
+      HOST: 0.0.0.0
+      DATA_DIR: /data/runs
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: INFO
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - ./tools/vlm-segmentation-mcp:/app
+      - ./logs/emissions:/app/emissions
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - vlm_weights:/app/weights
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python3.11", "-c", "import httpx; httpx.get('http://localhost:8008/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Video segmentation MCP server.
+  # It does not load another GPU model. It calls vlm-segmentation-mcp-server for each frame.
+  video-segmentation-mcp-server:
+    build:
+      context: ./tools/video-segmentation-mcp
+      dockerfile: Dockerfile
+    container_name: video-segmentation-mcp-server
+    ports:
+      - "8009:8009"
+    environment:
+      PORT: 8009
+      HOST: 0.0.0.0
+      DATA_DIR: /data/runs
+      IMAGE_SEGMENTATION_MCP_SERVER_URL: http://vlm-segmentation-mcp-server:8008/mcp
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: INFO
+    volumes:
+      - ./tools/video-segmentation-mcp:/app
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+      - ./logs/emissions:/app/emissions
+    depends_on:
+      vlm-segmentation-mcp-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8009/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  web-search-mcp-server:
+    build:
+      context: ./tools/web-search-mcp
+      dockerfile: Dockerfile
+    container_name: web-search-mcp-server
+    ports:
+      - "8010:8010"
+    environment:
+      PORT: 8010
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/web_search
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: INFO
+    volumes:
+      - ./tools/web-search-mcp:/app
+      - ./logs/emissions:/app/emissions
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8010/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  summarize-mcp-server:
+    build:
+      context: ./tools/summarize-mcp
+      dockerfile: Dockerfile
+    container_name: summarize-mcp-server
+    ports:
+      - "8016:8016"
+    env_file:
+      - ./agents-container/.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      PORT: 8016
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/summarization
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: INFO
+    volumes:
+      - ./tools/summarize-mcp:/app
+      - ./logs/emissions:/app/emissions
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8016/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  scene-detect-mcp-server:
+    build:
+      context: ./tools/scene-detect-mcp
+      dockerfile: Dockerfile
+    container_name: scene-detect-mcp-server
+    ports:
+      - "8025:8025"
+    environment:
+      PORT: 8025
+      HOST: 0.0.0.0
+      OUTPUT_DIRECTORY: /data/runs/scenes
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: INFO
+    volumes:
+      - ./tools/scene-detect-mcp:/app
+      - ./logs/emissions:/app/emissions
+      - ./data/fixtures:/data/fixtures:ro
+      - ./data/runs:/data/runs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8025/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    networks:
+      - videosearcher
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  videosearcher:
+    driver: bridge
+    name: videosearcher_agenticai_videosearcher
+
+volumes:
+  vlm_weights:

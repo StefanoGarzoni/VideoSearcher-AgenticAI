@@ -1,0 +1,29 @@
+# Dependencies for StreamableHTTP-based Librosa MCP Server
+# Audio Processing and MCP
+
+# Audio Processing
+librosa>=0.10.2
+numpy==1.26.3
+soundfile==0.12.1
+scipy==1.11.4
+
+# MCP and HTTP Transport
+mcp[cli]>=1.2.0
+
+# FastAPI for HTTP server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+starlette>=0.27.0
+sse-starlette>=1.8.2
+
+# HTTP client for health checks
+httpx>=0.27.0
+
+# Utilities
+pydantic>=2.10
+python-dotenv>=1.0.0
+anyio>=4.0.0
+
+# Energy tracking (Layer 2). The EmissionsTracker code in api.py already exists
+# but silently no-ops without this dependency installed.
+codecarbon>=2.3.0

@@ -1,0 +1,54 @@
+{
+  "video": "sample_video",
+  "items": [
+    {
+      "term": "elimination",
+      "transcript": "sample_video",
+      "expected_matches": [
+        {
+          "segment_idx": 0,
+          "start": 0.0,
+          "text": "last week, and we talked about variable elimination last week."
+        },
+        {
+          "segment_idx": 9,
+          "start": 35.28,
+          "text": "So let's go back to last lecture, where we talked about variable elimination."
+        },
+        {
+          "segment_idx": 10,
+          "start": 43.44,
+          "text": "We have seen that variable elimination is an efficient technique to perform any kind"
+        }
+      ],
+      "total_count": 3,
+      "is_true_negative": false
+    },
+    {
+      "term": "Wednesday",
+      "transcript": "sample_video",
+      "expected_matches": [
+        {
+          "segment_idx": 2,
+          "start": 12.18,
+          "text": "This Wednesday, there is no lecture."
+        },
+        {
+          "segment_idx": 5,
+          "start": 21.98,
+          "text": "On Wednesday, no lecture, because I will be traveling abroad, so it's not possible."
+        }
+      ],
+      "total_count": 2,
+      "is_true_negative": false
+    },
+    {
+      "term": "quantum",
+      "transcript": "sample_video",
+      "expected_matches": [],
+      "total_count": 0,
+      "is_true_negative": true
+    }
+  ],
+  "is_silver": true
+}

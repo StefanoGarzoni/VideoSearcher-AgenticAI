@@ -1,0 +1,26 @@
+[project]
+name = "ffmpeg-0-mcp"
+version = "1.0.0"
+description = "FFmpeg MCP Server for video/audio processing using Model Context Protocol"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "VideoSearcher Team" }
+]
+
+dependencies = [
+    "mcp[cli]>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]

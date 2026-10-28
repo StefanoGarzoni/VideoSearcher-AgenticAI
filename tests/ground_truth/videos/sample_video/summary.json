@@ -1,0 +1,12 @@
+{
+  "video": "sample_video",
+  "source_words": 105,
+  "key_points": [
+    "variable elimination",
+    "Wednesday",
+    "efficient",
+    "inference"
+  ],
+  "min_coverage": 0.6,
+  "note": "Key points authored by Claude from transcript inspection. Silver \u2014 requires user spot-check. A correct summary of the 60s lecture intro must mention the main topic (variable elimination) and the Wednesday no-lecture announcement; 2 of 4 key_points = 50%, 3/4 = 75%. threshold=0.60 requires at least 3/4 (algorithm, efficient, inference, Wednesday, elimination all expected in any reasonable summary)."
+}

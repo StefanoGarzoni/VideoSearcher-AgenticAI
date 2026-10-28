@@ -1,0 +1,59 @@
+{
+  "video": "f-35",
+  "items": [
+    {
+      "term": "F35",
+      "transcript": "f-35",
+      "expected_matches": [
+        {
+          "segment_idx": 0,
+          "start": 0.0,
+          "text": "I'm a pilot of the Italian military aeronautics and this is my car, the F35A."
+        },
+        {
+          "segment_idx": 1,
+          "start": 15.62,
+          "text": "The F35 is a fifth generation omnirole fighter, it's about 15 meters long, 12 meters wide,"
+        },
+        {
+          "segment_idx": 8,
+          "start": 61.2,
+          "text": "Now I'll tell you why I love flying with the F35."
+        },
+        {
+          "segment_idx": 9,
+          "start": 64.2,
+          "text": "The F35 is the most technologically advanced aircraft available to NATO and our Air Force."
+        },
+        {
+          "segment_idx": 13,
+          "start": 87.2,
+          "text": "The F35 makes influence on Voyager's"
+        }
+      ],
+      "total_count": 5,
+      "is_true_negative": false
+    },
+    {
+      "term": "NATO",
+      "transcript": "f-35",
+      "expected_matches": [
+        {
+          "segment_idx": 9,
+          "start": 64.2,
+          "text": "The F35 is the most technologically advanced aircraft available to NATO and our Air Force."
+        }
+      ],
+      "total_count": 1,
+      "is_true_negative": false
+    },
+    {
+      "term": "quantum",
+      "transcript": "f-35",
+      "expected_matches": [],
+      "total_count": 0,
+      "is_true_negative": true
+    }
+  ],
+  "is_silver": true
+}

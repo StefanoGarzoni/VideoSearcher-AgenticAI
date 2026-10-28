@@ -1,0 +1,98 @@
+{
+  "video": "f-35",
+  "method": "gaps-between-whisper-large-v3-segments",
+  "min_silence_s": 0.5,
+  "silence_segments": [
+    {
+      "start": 8.62,
+      "end": 15.62
+    },
+    {
+      "start": 34.58,
+      "end": 38.58
+    },
+    {
+      "start": 41.58,
+      "end": 44.58
+    },
+    {
+      "start": 48.58,
+      "end": 49.58
+    },
+    {
+      "start": 51.58,
+      "end": 52.2
+    },
+    {
+      "start": 58.2,
+      "end": 61.2
+    },
+    {
+      "start": 81.2,
+      "end": 83.2
+    },
+    {
+      "start": 86.2,
+      "end": 87.2
+    }
+  ],
+  "speech_segments": [
+    {
+      "start": 0.0,
+      "end": 8.62
+    },
+    {
+      "start": 15.62,
+      "end": 22.2
+    },
+    {
+      "start": 22.2,
+      "end": 29.7
+    },
+    {
+      "start": 29.7,
+      "end": 34.58
+    },
+    {
+      "start": 38.58,
+      "end": 41.58
+    },
+    {
+      "start": 44.58,
+      "end": 48.58
+    },
+    {
+      "start": 49.58,
+      "end": 51.58
+    },
+    {
+      "start": 52.2,
+      "end": 58.2
+    },
+    {
+      "start": 61.2,
+      "end": 64.2
+    },
+    {
+      "start": 64.2,
+      "end": 71.2
+    },
+    {
+      "start": 71.2,
+      "end": 76.2
+    },
+    {
+      "start": 76.2,
+      "end": 81.2
+    },
+    {
+      "start": 83.2,
+      "end": 86.2
+    },
+    {
+      "start": 87.2,
+      "end": 88.4
+    }
+  ],
+  "is_silver": true
+}

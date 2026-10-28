@@ -1,0 +1,39 @@
+{
+  "video": "tedtalk",
+  "items": [
+    {
+      "term": "audience",
+      "transcript": "tedtalk",
+      "expected_matches": [
+        {
+          "segment_idx": 2,
+          "start": 11.76,
+          "text": "Wow, what an audience."
+        }
+      ],
+      "total_count": 1,
+      "is_true_negative": false
+    },
+    {
+      "term": "Internet",
+      "transcript": "tedtalk",
+      "expected_matches": [
+        {
+          "segment_idx": 5,
+          "start": 19.08,
+          "text": "I care what the Internet thinks of my talk."
+        }
+      ],
+      "total_count": 1,
+      "is_true_negative": false
+    },
+    {
+      "term": "quantum",
+      "transcript": "tedtalk",
+      "expected_matches": [],
+      "total_count": 0,
+      "is_true_negative": true
+    }
+  ],
+  "is_silver": true
+}

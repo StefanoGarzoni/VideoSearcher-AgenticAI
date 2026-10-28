@@ -1,0 +1,146 @@
+{
+  "video": "f-35",
+  "note": "Bboxes are approximate visual estimates from Claude inspection; \u00b115% accuracy expected. Confirmed by human spot-check in A.3.8.",
+  "items": [
+    {
+      "frame_path": "videos/f-35/frames/t005s.jpg",
+      "timestamp": 5,
+      "query": "airplane",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "airplane",
+          "bbox": null,
+          "present": false
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/f-35/frames/t015s.jpg",
+      "timestamp": 15,
+      "query": "airplane",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "F-35 in flight",
+          "bbox": [
+            310,
+            325,
+            1100,
+            600
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/f-35/frames/t055s.jpg",
+      "timestamp": 55,
+      "query": "airplane",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "F-35 in hangar entrance (frontal view)",
+          "bbox": [
+            270,
+            60,
+            1010,
+            365
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/f-35/frames/t055s.jpg",
+      "timestamp": 55,
+      "query": "person",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "pilot in full flight gear",
+          "bbox": [
+            430,
+            55,
+            845,
+            675
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/f-35/frames/t065s.jpg",
+      "timestamp": 65,
+      "query": "airplane",
+      "image_w": 1280,
+      "image_h": 720,
+      "note": "Human-verified (2026-06-13): upper pair are F-35s; center and bottom are a different type (possibly F-15 Eagle or F-14 \u2014 reviewer not certain of type).",
+      "objects": [
+        {
+          "label": "F-35 upper-left",
+          "bbox": [
+            455,
+            150,
+            700,
+            285
+          ],
+          "present": true
+        },
+        {
+          "label": "F-35 upper-right",
+          "bbox": [
+            705,
+            145,
+            970,
+            280
+          ],
+          "present": true
+        },
+        {
+          "label": "fighter jet center (non-F-35)",
+          "bbox": [
+            430,
+            290,
+            730,
+            435
+          ],
+          "present": true
+        },
+        {
+          "label": "fighter jet bottom (non-F-35)",
+          "bbox": [
+            430,
+            460,
+            860,
+            620
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/f-35/frames/t075s.jpg",
+      "timestamp": 75,
+      "query": "airplane",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "F-35 close-up in flight",
+          "bbox": [
+            0,
+            100,
+            1280,
+            710
+          ],
+          "present": true
+        }
+      ]
+    }
+  ]
+}

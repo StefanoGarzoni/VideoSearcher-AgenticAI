@@ -1,0 +1,19 @@
+name: CPU-only checks
+on:
+  push:
+  pull_request:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU-test dependencies
+        run: python -m pip install pytest
+      - name: Run metric unit tests
+        run: python -m pytest -q tests/unit/test_metrics.py
+      - name: Check Python syntax
+        run: python -m compileall -q agents-container scripts tests tools

@@ -1,0 +1,20 @@
+# Dependencies for StreamableHTTP-based FFmpeg MCP Server
+# These are in addition to the base MCP dependencies
+
+# MCP and HTTP Transport
+mcp[cli]>=1.2.0
+
+# FastAPI for HTTP server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+starlette>=0.27.0
+sse-starlette>=1.8.2
+
+# HTTP client for health checks and testing
+httpx>=0.27.0
+codecarbon
+
+# Fuzzy string matching fallback for transcript search.
+# Handles Whisper transcription variants (typos, dropped words, paraphrases)
+# that literal + word-level regex cannot catch. C++ backend, ~1 MB.
+rapidfuzz>=3.0

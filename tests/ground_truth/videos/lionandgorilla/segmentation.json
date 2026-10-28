@@ -1,0 +1,96 @@
+{
+  "video": "lionandgorilla",
+  "note": "All frames have a burned-in subtitle band at the bottom ~80px and a 'BLONDI FOKS' watermark in the center. Bboxes exclude the subtitle region. Approximate visual estimates; \u00b115% accuracy expected.",
+  "items": [
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "query": "lion",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "lion",
+          "bbox": [
+            60,
+            270,
+            610,
+            650
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "query": "gorilla",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "gorilla",
+          "bbox": [
+            535,
+            220,
+            905,
+            660
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t010s.jpg",
+      "timestamp": 10,
+      "query": "lion",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "lion",
+          "bbox": [
+            0,
+            140,
+            640,
+            680
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t010s.jpg",
+      "timestamp": 10,
+      "query": "gorilla",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "gorilla",
+          "bbox": [
+            740,
+            100,
+            1280,
+            680
+          ],
+          "present": true
+        }
+      ]
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "query": "tiger",
+      "image_w": 1280,
+      "image_h": 720,
+      "objects": [
+        {
+          "label": "tiger",
+          "bbox": null,
+          "present": false
+        }
+      ]
+    }
+  ]
+}

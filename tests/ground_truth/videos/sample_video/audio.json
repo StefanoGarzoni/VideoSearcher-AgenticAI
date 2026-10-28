@@ -1,0 +1,16 @@
+{
+  "video": "sample_video",
+  "method": "librosa-silence-detection-min6s-segments",
+  "min_silence_s": 0.5,
+  "silence_segments": [],
+  "speech_segments": [
+    {"start": 0.0,  "end": 9.0},
+    {"start": 9.0,  "end": 16.0},
+    {"start": 16.0, "end": 25.0},
+    {"start": 25.0, "end": 33.0},
+    {"start": 33.0, "end": 43.0},
+    {"start": 43.0, "end": 50.0},
+    {"start": 50.0, "end": 61.0}
+  ],
+  "is_silver": false
+}

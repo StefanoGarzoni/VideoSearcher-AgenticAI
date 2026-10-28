@@ -1,0 +1,50 @@
+# Agents-Only Dependencies
+# These dependencies are ONLY for agent orchestration logic
+# Tools have their own separate requirements.txt files
+
+# OpenAI Agents SDK (official agent framework)
+# See: https://openai.github.io/openai-agents-python/
+openai-agents==0.6.4
+openai-agents[litellm]>=0.6.4
+openai==2.14.0
+litellm>=1.80.0
+
+# Model Context Protocol SDK (with StreamableHTTP support)
+mcp>=1.2.0
+
+# HTTP Client for Tool Communication (StreamableHTTP transport)
+httpx>=0.27.0
+requests==2.31.0
+sse-starlette>=1.8.2
+
+# Utilities
+pydantic>=2.10
+python-dotenv==1.0.0
+anyio>=4.0.0
+
+# Pipeline + tool runtime dependencies
+# Transcription is provided by the separate Faster-Whisper MCP tool container.
+# Note: FFmpeg CLI binary must be installed separately (see README)
+pandas>=2.0.0
+openpyxl>=3.1.0
+librosa==0.10.0
+SoundFile==0.12.1
+ffmpeg-python>=0.2.0
+
+# VQA — VLM inference directly in agent process (no MCP server)
+# Phi-4-reasoning-vision-15B requires torch >= 2.7.1 — overrides base 2.4.0
+torch>=2.7.1
+torchvision>=0.20.0
+# Pinned: Phi-4-reasoning-vision-15B's custom processor code
+# (modeling_phi4_visionr.py) imports several symbols from
+# transformers.models.siglip2.image_processing_siglip2 (ChannelDimension,
+# filter_out_non_signature_kwargs, etc.) that were re-exports removed in
+# transformers 5.4+. Keep at <5.4 until Microsoft updates the model repo.
+transformers>=5.0,<5.4
+accelerate>=1.0.0
+bitsandbytes>=0.44.0
+huggingface-hub>=0.20.0
+safetensors>=0.4.0
+sentencepiece>=0.1.99
+Pillow>=11.0.0
+codecarbon>=2.3.0

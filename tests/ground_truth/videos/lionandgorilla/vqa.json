@@ -1,0 +1,103 @@
+{
+  "video": "lionandgorilla",
+  "note": "All sampled frames have a burned-in subtitle band at the bottom ~80px and a 'BLONDI FOKS' watermark in the center. VQA questions avoid the subtitle region.",
+  "items": [
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "How many animals are visible in this image?",
+      "q_type": "count",
+      "reference_answer": "Two animals: one lion and one gorilla.",
+      "required_facts": [
+        "2",
+        "two"
+      ],
+      "acceptable_keywords": [
+        "two",
+        "2"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 1
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "What two animals are present in this image?",
+      "q_type": "identify",
+      "reference_answer": "A male lion (with a large dark mane) and a silverback gorilla, facing each other in what appears to be a zoo enclosure with grass and concrete walls.",
+      "required_facts": [
+        "lion",
+        "gorilla"
+      ],
+      "acceptable_keywords": [
+        "lion",
+        "gorilla",
+        "ape",
+        "primate",
+        "big cat"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 5
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t010s.jpg",
+      "timestamp": 10,
+      "question": "What color is the lion's mane?",
+      "q_type": "attribute",
+      "reference_answer": "Dark brown to golden-brown. The mane is full and predominantly dark, with lighter golden tones near the face.",
+      "required_facts": [
+        "brown"
+      ],
+      "acceptable_keywords": [
+        "brown",
+        "dark brown",
+        "golden",
+        "golden-brown",
+        "tawny",
+        "dark"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "Which animal appears taller or physically larger in this image \u2014 the lion or the gorilla?",
+      "q_type": "spatial",
+      "reference_answer": "The gorilla appears taller and larger, standing upright on two legs. The lion is crouching/stalking on four legs.",
+      "required_facts": [
+        "gorilla"
+      ],
+      "acceptable_keywords": [
+        "gorilla",
+        "larger",
+        "bigger",
+        "taller",
+        "upright",
+        "standing"
+      ],
+      "is_true_negative": false,
+      "min_answer_length": 3
+    },
+    {
+      "frame_path": "videos/lionandgorilla/frames/t006s.jpg",
+      "timestamp": 6,
+      "question": "Is there a tiger visible anywhere in this image?",
+      "q_type": "true_negative",
+      "reference_answer": "No. There is no tiger. The image shows a lion and a gorilla in a zoo enclosure.",
+      "required_facts": [
+        "no"
+      ],
+      "acceptable_keywords": [
+        "no",
+        "not visible",
+        "not present",
+        "cannot see",
+        "none",
+        "no tiger"
+      ],
+      "is_true_negative": true,
+      "min_answer_length": 3
+    }
+  ]
+}

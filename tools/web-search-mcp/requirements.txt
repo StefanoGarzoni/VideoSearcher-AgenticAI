@@ -1,0 +1,19 @@
+# Dependencies for the StreamableHTTP-based Web Search MCP Server
+
+# MCP and HTTP Transport
+mcp[cli]>=1.2.0
+
+# FastAPI for HTTP server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+starlette>=0.27.0
+sse-starlette>=1.8.2
+
+# HTTP client (health checks, REST providers: Tavily/Serper/Brave)
+httpx>=0.27.0
+
+# DuckDuckGo search (keyless default provider)
+ddgs>=6.0
+
+# Energy tracking (CodeCarbon Layer-2)
+codecarbon>=2.3.0

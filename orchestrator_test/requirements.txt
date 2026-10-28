@@ -1,0 +1,13 @@
+# Orchestrator Testing Framework Dependencies
+
+# Excel I/O
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Core dependencies (should match main project)
+pydantic>=2.0.0
+
+# These will be inherited from parent project if installed there:
+# openai
+# openai-agents
+# litellm

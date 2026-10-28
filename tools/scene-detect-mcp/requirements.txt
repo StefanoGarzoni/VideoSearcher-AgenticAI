@@ -1,0 +1,20 @@
+# Dependencies for the StreamableHTTP-based Scene Detect MCP Server
+
+# MCP and HTTP Transport
+mcp[cli]>=1.2.0
+
+# FastAPI for HTTP server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+starlette>=0.27.0
+sse-starlette>=1.8.2
+
+# HTTP client for health checks
+httpx>=0.27.0
+
+# Scene detection
+scenedetect>=0.6.4
+opencv-python-headless>=4.8
+
+# Energy tracking (Layer-2)
+codecarbon>=2.3.0

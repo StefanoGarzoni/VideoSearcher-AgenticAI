@@ -1,0 +1,23 @@
+# All session run outputs
+runs/
+
+# Fixture binaries (too large for git; see fixtures/raw/DOWNLOADS.md)
+fixtures/raw/*.mp4
+fixtures/raw/*.wav
+fixtures/raw/*.jpg
+fixtures/audio_extraction/*.tar.gz
+fixtures/transcription/*.tar.gz
+fixtures/video_clips/sample_clips/
+
+# Legacy stage dirs (left empty after migration)
+audio_analysis/
+audio_extraction/
+compression/
+frames/
+scenes/
+search_results/
+segmentation/
+summarization/
+transcription/
+video_clips/
+web_search/
