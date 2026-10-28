@@ -493,29 +493,16 @@ plus ready-made community GGUFs). The full per-key download table is in
 
 
 
-### 4. Download the input fixtures + create output dirs
+### 4. Provision appropriately licensed media + create output dirs
 
-The launcher requires `data/fixtures/raw/` to exist; the test suite and demos read the videos from
-there. They ship as one public Google Drive archive (~161 MB, md5-verified):
+The original evaluation required experiment-specific video fixtures, but their former public download link is intentionally **not redistributed** here. A source of licensed media must be supplied independently by an authorized rightsholder. The original files cannot be recovered from this repository.
 
 ```bash
-pip install gdown --break-system-packages
-RAW_ZIP="$(mktemp --suffix=.zip)"     # avoids clobbering /tmp/raw.zip on a shared machine
-gdown 1BvCoujwL3YydSe8qLM_gwXUfoRhZVx0f -O "$RAW_ZIP"
-unzip "$RAW_ZIP" -d data/fixtures/ -x "__MACOSX/*" "raw/DOWNLOADS.md"
-rm -f "$RAW_ZIP"
-
-# output + log dirs (the only other host paths the containers use)
-mkdir -p data/runs logs/orchestrator logs/emissions
+# Directory preparation only; no fixture download is performed.
+mkdir -p data/fixtures/raw data/runs logs/orchestrator logs/emissions
 ```
 
-`data/fixtures` (read-only, at `/data/fixtures`) and `data/runs` (outputs, at `/data/runs`) are the
-only host dirs bind-mounted into the containers. See
-[`data/fixtures/raw/DOWNLOADS.md`](../data/fixtures/raw/DOWNLOADS.md) for the file list.
-
-> On a shared machine, a hardcoded path like `/tmp/raw.zip` can already be owned by another user,
-> which fails with `Permission denied` after the download completes. `mktemp` sidesteps this by
-> always generating a fresh, uniquely-owned filename.
+`data/fixtures` (read-only, at `/data/fixtures`) and `data/runs` (outputs, at `/data/runs`) are the host directories mounted into the containers. The historical filename manifest is in [`data/fixtures/raw/DOWNLOADS.md`](../data/fixtures/raw/DOWNLOADS.md). **The full system remains unavailable without the separate private framework and its prerequisites.** Replacement media changes evaluation conditions; old scores must not be represented as reproduced.
 
 
 

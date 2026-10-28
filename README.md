@@ -56,7 +56,7 @@ The source artifacts document **66 evaluations per model** (22 task scenarios at
 | `agents-container/` | Orchestrator, specialized agents, in-process VQA integration, CLI |
 | `tools/` | MCP service implementations and Dockerfiles |
 | `local-ai-service/` | Local model launcher / orchestration scripts |
-| `tests/` | Scenarios, ground truth, metrics, curated benchmark outputs |
+| `tests/` | Scenarios, structured ground truth (excluding media-derived image frames and TED transcripts), metrics, curated benchmark outputs |
 | `scripts/` | Benchmark, energy and hyperparameter tuning scripts |
 | `docs/` | Architecture, methodology, limitations, presentations |
 | `legacy/` | Older project materials retained for context (not the current runtime) |
@@ -79,9 +79,10 @@ python -m pytest -q tests/unit/test_metrics.py
 - [Vision-language system slides (PDF)](docs/presentations/VideoSearcher_VLM_Interaction.pdf)
 - [Benchmark defense slides (PDF)](docs/presentations/VideoSearcher_Benchmark_Defense.pdf) · [Editable PPTX](docs/presentations/VideoSearcher_Benchmark_Defense.pptx)
 - [Original detailed technical guide](docs/TECHNICAL_GUIDE.md) (historical commands; may require missing private dependencies)
+- [Third-party notices](docs/THIRD_PARTY_NOTICES.md) · [Public-release checklist](docs/PUBLICATION_CHECKLIST.md)
 
 ## Contributors and attribution
 
 **Stefano Garzoni · Daniel Guarnizo · Leonardo Scappatura** — group project, Politecnico di Milano. The **contribution of each individual has not been inferred from filenames or slide authorship**. The externally maintained VLM testing framework is **not claimed as original work by this repository's maintainers**. See [scope and attribution](docs/PROJECT_SCOPE.md).
 
-**Licensing:** No open-source license is granted by this snapshot. All underlying rights remain with their respective holders. **Private repository ≠ permission to redistribute**; review rights and teammate consent before changing visibility.
+**Public source snapshot — not an open-source license grant.** This repository is available to read, but it has no project-level `LICENSE` granting permission to reuse its original code. Rights to third-party content remain with the relevant holders. The maintainers must independently confirm permission from contributors and rightsholders; public visibility alone is not evidence of such authorization. See [publication checklist](docs/PUBLICATION_CHECKLIST.md) and [third-party notices](docs/THIRD_PARTY_NOTICES.md).

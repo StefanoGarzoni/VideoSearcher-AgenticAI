@@ -32,7 +32,7 @@ local-ai-service/models/
 llama.cpp/
 logs/
 data/runs/
-results/
+/results/
 *.gguf
 *.safetensors
 *.pt
@@ -68,3 +68,28 @@ ai-sprint-design/
 # Historic prototype binaries
 legacy/videosearcher/src/deepspeech/
 legacy/videosearcher/src/object-detector/
+
+# Keep ONLY curated benchmark artifacts; exclude the hundreds of raw experiment files.
+/tests/results/*
+!/tests/results/all_metrics.csv
+!/tests/results/markdowns/
+/tests/results/markdowns/*
+!/tests/results/markdowns/final_metrics_table.md
+!/tests/results/markdowns/comparison_2026-07-01T21-35-33.md
+!/tests/results/tuning/
+/tests/results/tuning/*
+!/tests/results/tuning/confirmations.json
+!/tests/results/tuning/gemma/
+!/tests/results/tuning/gpt-oss-120b/
+!/tests/results/tuning/qwen36-a3b/
+/tests/results/tuning/*/*
+!/tests/results/tuning/gemma/history.csv
+!/tests/results/tuning/gpt-oss-120b/history.csv
+!/tests/results/tuning/qwen36-a3b/history.csv
+
+# Avoid accidentally re-adding third-party media excerpts/derived reference frames
+/tests/ground_truth/videos/*/frames/*.jpg
+/tools/vlm-segmentation-mcp/segmented_*.jpg
+
+# Publication patch logistics (if extracted inside repository)
+/VideoSearcher_PUBLIC_PATCH/

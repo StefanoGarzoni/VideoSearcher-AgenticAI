@@ -16,7 +16,9 @@ VideoSearcher-AgenticAI was presented in July 2026 as a group project at **Polit
 
 ## Intellectual property and distribution
 
-The source was provided as a detached archive without prior Git metadata, an approved public license, or a verified third-party redistribution grant. This repository therefore intentionally has **no LICENSE file** and starts private. Do not make it public or redistribute incorporated materials without agreement from contributors and any relevant rightsholders. External models, pretrained weights, fixtures and cited frameworks have their own terms.
+The source was provided as a detached archive without prior Git metadata, an approved project-level public license, or documented redistribution permissions for every component. This **public** repository is a source snapshot for inspection, **not** a blanket open-source license grant. It intentionally has no project-level `LICENSE` file. Public visibility does **not** establish agreement from contributors or third-party rightsholders; those permissions must be confirmed separately by the publisher.
+
+External models, pretrained weights, templates, media fixtures and referenced frameworks retain their own terms. Potentially third-party-derived media frames and TED transcript samples were removed from the current tree as a precaution (see [Public-release checklist](PUBLICATION_CHECKLIST.md)); that removal does not purge historical Git commits. The included `llama.cpp`-derived Jinja templates are individually acknowledged in [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Source integrity
 

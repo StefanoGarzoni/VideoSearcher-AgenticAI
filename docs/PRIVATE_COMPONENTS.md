@@ -20,7 +20,7 @@ An external project previously referenced as `Repetti_VLM-Testing` informed the 
 
 ## What remains available
 
-The repository contains its own orchestrator/agent code, MCP service implementations, test harness and ground-truth files, benchmark summaries, experimental records selected for retention, plots, and presentations.
+The repository contains its own orchestrator/agent code, MCP service implementations, test harness and **structured** ground-truth files, benchmark summaries, selected experimental records, plots, and presentations. Media-derived JPEG frames and historical TED transcript/derived JSON have been excluded from the public tree pending rights verification.
 
 ## What the documentation means
 

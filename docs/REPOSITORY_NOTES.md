@@ -15,3 +15,14 @@ Curated changes:
 9. Updated GitHub Copilot context to the actual present codebase, and added CPU-only checks in GitHub Actions.
 
 Known limitations remain intentional: missing private framework(s), missing model weights, external media and inability to reproduce the full GPU pipeline from this archive. There is **no license grant** and no claim of per-contributor code ownership.
+
+## Public-release adjustments (28 October 2026)
+
+- Updated README and project provenance language from the original **private** snapshot to a **publicly readable** source snapshot without a project-wide license grant.
+- Removed the URL and automated download command for the unverified fixture archive. No replacement download service is implied.
+- Removed media-derived video frames and a segmentation sample image, and removed historical TED-talk transcript/derived JSON from the current working tree as a conservative public-distribution measure; experiment summary metrics remain unchanged.
+- Added a third-party notice for the vendored `llama.cpp` chat templates, and a public-release checklist for rights verification and known limitations.
+- Fixed the overly broad `results/` ignore pattern from the initial commit and added **seven** curated benchmark files (CSV/Markdown/confirmation/history) that the README previously linked but GitHub did not actually contain.
+- Removed one-time private repository creation scripts.
+
+**Important:** These removals affect the latest commit only. The original commit remains in Git history, and a normal push does not revoke access to external Google Drive materials or clear rights to other images/slides. See [Public-release checklist](PUBLICATION_CHECKLIST.md).

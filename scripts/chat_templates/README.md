@@ -17,3 +17,7 @@ model's `chat_template` in the REGISTRY at it. See
 > their native template and instead pass kwargs to it — set
 > `chat_template_kwargs={"enable_thinking": False}` on the REGISTRY entry, which the
 > harness forwards as `--chat-template-kwargs` at server launch.
+
+## License and provenance
+
+These vendored templates were sourced or adapted from the `ggml-org/llama.cpp` template directory. The upstream project is MIT-licensed; the applicable copyright notice and MIT permission notice are retained in [`docs/THIRD_PARTY_NOTICES.md`](../../docs/THIRD_PARTY_NOTICES.md). The modified Mistral template is identified as an adaptation above. This notice does **not** license the rest of VideoSearcher or override rights in independent third-party works.

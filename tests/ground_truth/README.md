@@ -17,7 +17,7 @@ tests/ground_truth/
     f-35/          (f-35.mp4, 88s, 1280x720)
     lionandgorilla/ (lionandgorilla.mp4, 17s, 1280x720)
     sample_video/  (sample_video.mp4, 60s, 720p)
-    tedtalk/       (tedtalk.mp4, 81s, 720p)
+    tedtalk/       (historical fixture; video and transcript-derived ground truth excluded from public snapshot)
 ```
 
 Each `videos/<name>/` contains all artifacts for that video: frames/, transcript.json, grep.json, audio.json, vqa.json, segmentation.json, scene_detect.json.
@@ -103,3 +103,7 @@ docker exec agents-orchestrator python /tmp/run_whisper_openai.py
 # Re-derive silence/grep from transcripts
 python3 tests/ground_truth/derive_audio_grep.py  # (Step 3 will add this)
 ```
+
+## Public snapshot limitation
+
+The original reference-frame JPEGs and the TED-talk transcript-derived JSON were removed from the current tree because redistribution permissions could not be established from the supplied archive. Names and structured expectations for other scenarios remain for historical context. A full fixture-based evaluation requires independently licensed media and recomputed reference data when inputs change. See [`docs/PUBLICATION_CHECKLIST.md`](../../docs/PUBLICATION_CHECKLIST.md).

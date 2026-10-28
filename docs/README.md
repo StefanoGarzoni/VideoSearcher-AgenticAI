@@ -40,3 +40,8 @@
 - [System architecture and VLM interactions (PDF)](presentations/VideoSearcher_VLM_Interaction.pdf)
 - [Benchmark and Bayesian tuning (PDF)](presentations/VideoSearcher_Benchmark_Defense.pdf)
 - [Benchmark editable slides (PPTX)](presentations/VideoSearcher_Benchmark_Defense.pptx)
+
+## Public distribution and attribution
+
+- [Public-release checklist](PUBLICATION_CHECKLIST.md) — what was excluded and which rights must still be verified
+- [Third-party notices](THIRD_PARTY_NOTICES.md) — acknowledgments for vendored chat templates and other external components

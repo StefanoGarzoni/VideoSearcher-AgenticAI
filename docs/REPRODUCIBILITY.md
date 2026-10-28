@@ -22,4 +22,4 @@
 
 ## Fixture provenance
 
-The original `data/fixtures/raw/DOWNLOADS.md` documents a source archive and fixture list. Fixture videos have **not** been copied into this Git snapshot; their usage and redistribution rights should be checked before downloading or rehosting them.
+The historical [`data/fixtures/raw/DOWNLOADS.md`](../data/fixtures/raw/DOWNLOADS.md) now retains **only filenames and their experimental roles**, not an externally hosted archive URL. Videos, video-derived JPEG reference frames, and historic TED transcript/derived JSON are deliberately absent from the current public tree pending documented rights clearance. Their removal reduces public redistribution risk but also limits direct reproducibility. Permissions for hosted archives and historic Git commits must be handled separately; see [Public-release checklist](PUBLICATION_CHECKLIST.md).
